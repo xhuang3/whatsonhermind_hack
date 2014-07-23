@@ -17,3 +17,5 @@ c:\users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMi
 c:\users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\WhatsOnHerMind.pdb
 c:\users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\XapCacheFile.xml
 c:\users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\LandingPage.g.cs
+C:\Users\xinhu\Documents\Visual Studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\MainAppPage.g.cs
+C:\Users\xinhu\Documents\Visual Studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\RegisterPage.g.cs
