@@ -33,16 +33,50 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            
-            <TextBlock Text="Username:" Grid.Row="0" Grid.Column="0" />
-            <TextBlock Text="Password:" Grid.Row="1" Grid.Column="0" />
-            <TextBlock Text="Confirm Password:" Grid.Row="2" Grid.Column="0" />
-            <Button Content="Register" Grid.Row="3" Grid.Column="0" />
+
+            <Grid x:Name="UsernamePanel" Grid.Row="0" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Username:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <TextBox BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid x:Name="PasswordnamePanel" Grid.Row="1" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Password:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <TextBox BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid x:Name="ConfirmPasswordPanel" Grid.Row="2" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Confirm Password:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <TextBox BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid x:Name="EmailPanel" Grid.Row="3" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Email:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <TextBox BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+            <Button Content="Register" Grid.Row="5" Grid.Column="0" />
         </Grid>
     </Grid>
 

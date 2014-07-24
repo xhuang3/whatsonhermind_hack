@@ -17,27 +17,8 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
@@ -50,18 +31,39 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <TextBlock Text="UserName:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBlock Text="Password:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
-            <TextBox Width="200" Grid.Column="1" Grid.Row="0" Background="White" FontFamily="Portable User Interface"/>
-            <TextBox Width="200" Grid.Column="1" Grid.Row="1" Background="White" />
-            <Button Width="150" Content="Register" Grid.Column="0" Grid.Row="2" Click="RegisterButtonClick"/>
-            <Button Width="150" HorizontalAlignment="Center" Content="Log in" Grid.Column="1" Grid.Row="2" Click="LogInButtonClick"/>
+            
+            <Grid x:Name="UsernamePanel" Grid.Row="0" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Username:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <TextBox BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid x:Name="PasswordPanel" Grid.Row="1" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Password:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <TextBox BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid x:Name="ButtonPanel" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button HorizontalAlignment="Stretch" Content="Register" Grid.Column="0" Click="RegisterButtonClick"/>
+                <Button HorizontalAlignment="Stretch" Content="Log in" Grid.Column="1" Click="LogInButtonClick"/>
+            </Grid>
         </Grid> 
     </Grid>
 
