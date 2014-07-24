@@ -21,8 +21,14 @@ namespace WhatsOnHerMind
 
         private void LogInButtonClick(object sender, RoutedEventArgs e)
         {
-            // TODO: Check credentials
-            NavigationService.Navigate(new Uri("/MainAppPage.xaml", UriKind.Relative));
+            if(Helper.login(usernametextbox.Text, passwordtextbox.Password))
+            {
+                NavigationService.Navigate(new Uri("/MainAppPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                // TODO: POPUP APPEAR
+            } 
         }
 
         private void RegisterButtonClick(object sender, RoutedEventArgs e)

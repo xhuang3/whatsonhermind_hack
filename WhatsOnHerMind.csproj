@@ -97,6 +97,7 @@
     <Compile Include="LandingPage.xaml.cs">
       <DependentUpon>LandingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginHelper.cs" />
     <Compile Include="MainAppPage.xaml.cs">
       <DependentUpon>MainAppPage.xaml</DependentUpon>
     </Compile>
