@@ -22,12 +22,12 @@ namespace WhatsOnHerMind
         private void LogInButtonClick(object sender, RoutedEventArgs e)
         {
             // TODO: Check credentials
-            // TODO: Goes to the MainAppPage
+            NavigationService.Navigate(new Uri("/MainAppPage.xaml", UriKind.Relative));
         }
 
         private void RegisterButtonClick(object sender, RoutedEventArgs e)
         {
-            // TODO: Goes to the RegisterPage
+            NavigationService.Navigate(new Uri("/RegisterPage.xaml", UriKind.Relative));
         }
     }
 }
