@@ -10,7 +10,7 @@ namespace WhatsOnHerMind
     {
         public static bool login(string username, string password)
         {
-            return false;
+            return true;
         }
 
         public static bool register(string username, string password, string email)

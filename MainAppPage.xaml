@@ -25,7 +25,35 @@
         <Grid x:Name="PivotRoot" Background="Transparent">
             <controls:Pivot>
                 <controls:PivotItem Header="Data">
-                    <Grid/>
+                    <Grid>
+                        <ListBox>
+                            <ListBoxItem Content="Item1" />
+                            <ListBoxItem Content="Item2" />
+                            <ListBoxItem Content="Item3" />
+                            <ListBoxItem Content="Item4" />
+                            <ListBoxItem Content="Item5" />
+                            <ListBoxItem Content="Item1" />
+                            <ListBoxItem Content="Item2" />
+                            <ListBoxItem Content="Item3" />
+                            <ListBoxItem Content="Item4" />
+                            <ListBoxItem Content="Item5" />
+                            <ListBoxItem Content="Item1" />
+                            <ListBoxItem Content="Item2" />
+                            <ListBoxItem Content="Item3" />
+                            <ListBoxItem Content="Item4" />
+                            <ListBoxItem Content="Item5" />
+                            <ListBoxItem Content="Item1" />
+                            <ListBoxItem Content="Item2" />
+                            <ListBoxItem Content="Item3" />
+                            <ListBoxItem Content="Item4" />
+                            <ListBoxItem Content="Item5" />
+                            <ListBoxItem Content="Item1" />
+                            <ListBoxItem Content="Item2" />
+                            <ListBoxItem Content="Item3" />
+                            <ListBoxItem Content="Item4" />
+                            <ListBoxItem Content="Item5" />
+                        </ListBox>
+                    </Grid>
                 </controls:PivotItem>
                 <controls:PivotItem Header="Predition">
                     <Grid/>
@@ -34,37 +62,6 @@
                     <Grid/>
                 </controls:PivotItem>
             </controls:Pivot>
-        </Grid>
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            
-            <TextBlock Text="Mon" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Text="Tue" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Text="Wed" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Text="Thu" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Text="Fri" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Text="Sat" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <TextBlock Text="Sun" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
     </Grid>
 

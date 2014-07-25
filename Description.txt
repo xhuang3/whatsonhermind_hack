@@ -1,0 +1,8 @@
+﻿WhatsOnHerMind
+This App is To: ?????
+
+TODO: Change the ApplicationIcon.png
+TODO: Login Popup (Credentials incorrect)
+TODO: MainLogicDesign
+
+Please put notes here!!!!
