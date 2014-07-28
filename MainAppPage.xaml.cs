@@ -15,6 +15,7 @@ namespace WhatsOnHerMind
         public MainAppPage()
         {
             InitializeComponent();
+            ConclusionMade.DataContext = new MakeConclusion();
         }
     }
 }

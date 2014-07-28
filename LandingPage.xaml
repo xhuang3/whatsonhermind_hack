@@ -13,6 +13,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -20,11 +21,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <Popup HorizontalOffset="40" VerticalOffset="300" x:Name="LoginPopup">
+            <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Black">
+                <TextBlock Text="Please Check your username/password!" HorizontalAlignment="Center"/>
+                <Button Content="Close" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Popup>
+
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="OneWeek" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="What's On Her Mind" Margin="9,-7,31,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="45" Height="114"/>
-            <TextBlock Text="I actually have the vhd disk converted to vhdx format. Do you want me to share that with the others so they don’t need to convert that again? I need to know the uri to put the vhdx file though." TextAlignment="Center" TextWrapping="Wrap" />
+            <TextBlock x:Name="IntroText"  Text="{Binding AppIntro}" TextAlignment="Center" TextWrapping="Wrap" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -52,8 +60,8 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Password:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
-                <PasswordBox x:Name="passwordtextbox" BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <TextBlock KeyUp="UsernameBoxKeyup" Text="Password:" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF4F4E4E"/>
+                <PasswordBox KeyUp="PasswordBoxKeyup" x:Name="passwordtextbox" BorderThickness="0" Width="400" Height="80" Grid.Row="1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" />
             </Grid>
 
             <Grid x:Name="ButtonPanel" Grid.Row="3">

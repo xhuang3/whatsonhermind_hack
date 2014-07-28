@@ -24,42 +24,46 @@
         <!--TitlePanel contains the name of the application and page title-->
         <Grid x:Name="PivotRoot" Background="Transparent">
             <controls:Pivot>
-                <controls:PivotItem Header="Data">
+                <controls:PivotItem Header="Conclusion">
                     <Grid>
-                        <ListBox>
-                            <ListBoxItem Content="Item1" />
-                            <ListBoxItem Content="Item2" />
-                            <ListBoxItem Content="Item3" />
-                            <ListBoxItem Content="Item4" />
-                            <ListBoxItem Content="Item5" />
-                            <ListBoxItem Content="Item1" />
-                            <ListBoxItem Content="Item2" />
-                            <ListBoxItem Content="Item3" />
-                            <ListBoxItem Content="Item4" />
-                            <ListBoxItem Content="Item5" />
-                            <ListBoxItem Content="Item1" />
-                            <ListBoxItem Content="Item2" />
-                            <ListBoxItem Content="Item3" />
-                            <ListBoxItem Content="Item4" />
-                            <ListBoxItem Content="Item5" />
-                            <ListBoxItem Content="Item1" />
-                            <ListBoxItem Content="Item2" />
-                            <ListBoxItem Content="Item3" />
-                            <ListBoxItem Content="Item4" />
-                            <ListBoxItem Content="Item5" />
-                            <ListBoxItem Content="Item1" />
-                            <ListBoxItem Content="Item2" />
-                            <ListBoxItem Content="Item3" />
-                            <ListBoxItem Content="Item4" />
-                            <ListBoxItem Content="Item5" />
-                        </ListBox>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.Row="0" >
+                            <TextBlock Text="Name:" /> <!--Should be able to enter or change name-->
+                            <TextBlock Text="Age:" /> <!--Should be able to enter or change age-->
+                        </StackPanel>
+                        
+                        <TextBlock x:Name="ConclusionMade" Grid.Row="1" Text="{Binding Conclusion}" TextWrapping="Wrap" />
                     </Grid>
                 </controls:PivotItem>
-                <controls:PivotItem Header="Predition">
-                    <Grid/>
+                <controls:PivotItem Header="Date">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!--Description-->
+                        <!--Enter New Date-->
+                        <!--Display Dates-->
+                    </Grid>
                 </controls:PivotItem>
-                <controls:PivotItem Header="Other">
-                    <Grid/>
+                <controls:PivotItem Header="Fight">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!--Description-->
+                        <!--Enter New Date-->
+                        <!--Display Dates-->
+                    </Grid>
                 </controls:PivotItem>
             </controls:Pivot>
         </Grid>
