@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:amq="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -44,7 +45,7 @@
                             </StackPanel>
                         </StackPanel>
                         
-                        <TextBlock x:Name="ConclusionMade" Grid.Row="1" Text="{Binding Conclusion}" TextWrapping="Wrap" />
+                        <amq:LineGraph />
                     </Grid>
                 </controls:PivotItem>
                 <controls:PivotItem Header="Date">
