@@ -32,8 +32,16 @@
                         </Grid.RowDefinitions>
                         
                         <StackPanel Grid.Row="0" >
-                            <TextBlock Text="Name:" /> <!--Should be able to enter or change name-->
-                            <TextBlock Text="Age:" /> <!--Should be able to enter or change age-->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name:        " />
+                                <!--Should be able to enter or change name-->
+                                <TextBox x:Name="NameBox" Text="Enter Name" Background="Transparent"  Height="60" Width="300"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Age:           " />
+                                <!--Should be able to enter or change age-->
+                                <TextBox x:Name="AgeBox" Text="Enter Age" Background="Transparent" Height="60" Width="300"/>
+                            </StackPanel>
                         </StackPanel>
                         
                         <TextBlock x:Name="ConclusionMade" Grid.Row="1" Text="{Binding Conclusion}" TextWrapping="Wrap" />
@@ -47,9 +55,12 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         
-                        <!--Description-->
-                        <!--Enter New Date-->
+                        <TextBlock TextWrapping="Wrap" Text="this is the description" Grid.Row="0" />
                         <!--Display Dates-->
+                        <ListBox Height="500" x:Name="DateListBox" Grid.Row="1">
+                            <!--Auto Update-->
+                        </ListBox>
+                        <Button Content="Enter New Date" Grid.Row="2" Click="EnterNewDateClick" />
                     </Grid>
                 </controls:PivotItem>
                 <controls:PivotItem Header="Fight">

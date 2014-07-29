@@ -16,6 +16,12 @@ namespace WhatsOnHerMind
         {
             InitializeComponent();
             ConclusionMade.DataContext = new MakeConclusion();
+            DateListBox.ItemsSource = DateList.GetDateList();
+        }
+
+        private void EnterNewDateClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/DatePicker.xaml", UriKind.Relative));
         }
     }
 }

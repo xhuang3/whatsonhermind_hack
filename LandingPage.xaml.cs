@@ -1,8 +1,6 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
-using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
@@ -14,7 +12,6 @@ namespace WhatsOnHerMind
         {
             get
             {
-                
                 return "Having trouble understanding your girlfriend's mind?\n Want to know why or when she is getting mad?\n This app is to help you better understand girls by using machine learning!";
             }
         }
