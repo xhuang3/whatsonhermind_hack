@@ -8,7 +8,7 @@ namespace WhatsOnHerMind
     {
         private ObservableCollection<DataObject> _dataList = new ObservableCollection<DataObject>();
 
-        public ObservableCollection<DataObject> DataList { get { return _dataList; } }
+        public ObservableCollection<DataObject> DataList { get; set; }
 
         public MainAppPage()
         {
@@ -16,17 +16,9 @@ namespace WhatsOnHerMind
             DateListBox.ItemsSource = DateTimeList.GetDateTimeList();
             
             this.DataContext = this;
+            DataObjectList.PopulateListWithoutValue(new DateTime());
+            DataList = DataObjectList.GetDataObjectList();
 
-            // Create a list of dataobejct for the next 30 days
-            // TODO: should be in another place
-            for (int i = 0; i < 30; ++i)
-            {
-                DateTime date = (new DateTime()).AddDays(i);
-                DataObject dataobject;
-                //_dataList.Add(new DataObject(date.AddDays(i), 1));
-                DateTimeList datelist = DateTimeList.GetDateTimeList();
-                //if(datelist.Contains(date)) dataobject = new DataObject(date, )
-            }
         }
 
         private void DatePickerValueChanged(object sender, DateTimeValueChangedEventArgs e)

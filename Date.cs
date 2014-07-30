@@ -25,7 +25,7 @@ namespace WhatsOnHerMind
             else
             {
                 int i = 0;
-                while (datetime > DateTimeListInstance[i])
+                while (i < DateTimeListInstance.Count && datetime > DateTimeListInstance[i])
                 {
                     i++;
                 }
@@ -45,6 +45,7 @@ namespace WhatsOnHerMind
             for (int i = 1; i < DateTimeListInstance.Count; ++i)
             {
                 avg += DateTimeListInstance[i].DayOfYear - tempData.DayOfYear;
+                tempData = DateTimeListInstance[i];
             }
             return avg / (DateTimeListInstance.Count - 1);
         }
