@@ -35,13 +35,20 @@ namespace WhatsOnHerMind
             return DateListInstance;
         }
 
-        public int AvgDiff()
+        public static int AvgDiff()
         {
-            foreach (DataObject data in DateListInstance)
+            // TODO: Need to sort DateList
+            if (DateListInstance.Count < 2)
             {
-
+                return -1;
             }
-            return 0;
+            int avg = -1;
+            DataObject tempData = DateListInstance[0];
+            for (int i = 1; i < DateListInstance.Count; ++i)
+            {
+                avg += DateListInstance[i].Date.DayOfYear - tempData.Date.DayOfYear;
+            }
+            return avg / (DateListInstance.Count - 1);
         }
     }
 }

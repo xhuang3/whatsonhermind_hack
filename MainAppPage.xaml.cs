@@ -55,6 +55,16 @@ namespace WhatsOnHerMind
         {
             DateTime date = (DateTime)e.NewDateTime;
             DateList.GetDateList().Add(new DataObject(date));
+
+            int avgDay = DateList.AvgDiff();
+            if(avgDay > 0){
+                DateBlock.Text = (date.AddDays(avgDay)).ToString();
+            }
+            else
+            {
+                DateBlock.Text = "Not enough information!";
+            }
+            
         }
     }
 }

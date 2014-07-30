@@ -24,14 +24,12 @@ namespace WhatsOnHerMind
 
         private void LogInButtonClick(object sender, RoutedEventArgs e)
         {
-            //var messageDialog = new ContentDialog();
             if(Helper.login(usernametextbox.Text, passwordtextbox.Password))
             {
                 NavigationService.Navigate(new Uri("/MainAppPage.xaml", UriKind.Relative));
             }
             else
             {
-                // TODO: POPUP APPEAR
                 LoginPopup.IsOpen = true;
             } 
         }

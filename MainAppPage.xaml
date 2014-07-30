@@ -35,14 +35,9 @@
                         
                         <StackPanel Grid.Row="0" >
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Name:        " />
-                                <!--Should be able to enter or change name-->
-                                <TextBox x:Name="NameBox" Text="Enter Name" Background="Transparent"  Height="60" Width="300"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Age:           " />
+                                <TextBlock Text="Next Date is " />
                                 <!--Should be able to enter or change age-->
-                                <TextBox x:Name="AgeBox" Text="Enter Age" Background="Transparent" Height="60" Width="300"/>
+                                <TextBlock x:Name="DateBlock"/>
                             </StackPanel>
                         </StackPanel>
                         
@@ -86,19 +81,6 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                         <tk:DatePicker x:Name="AppDatePicker" Grid.Row="2"  ValueChanged="DatePickerValueChanged" />
-                    </Grid>
-                </controls:PivotItem>
-                <controls:PivotItem Header="Fight">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <!--Description-->
-                        <!--Enter New Date-->
-                        <!--Display Dates-->
                     </Grid>
                 </controls:PivotItem>
             </controls:Pivot>
