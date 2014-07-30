@@ -4,22 +4,6 @@ using System.Collections.ObjectModel;
 
 namespace WhatsOnHerMind
 {
-    // TODO: We can move DataObject to another .cs file
-    public class DataObject
-    {
-        public string DateString { get; set; }
-        public DateTime Date { get; set; }
-
-        public double Data { get; set; }
-
-        public DataObject(DateTime date, double data)
-        {
-            Date = date;
-            Data = data;
-            DateString = date.ToString(); //TODO: Better format
-        }
-    }
-
     public partial class MainAppPage : PhoneApplicationPage
     {
         private ObservableCollection<DataObject> _dataList = new ObservableCollection<DataObject>();
@@ -29,27 +13,31 @@ namespace WhatsOnHerMind
         public MainAppPage()
         {
             InitializeComponent();
-            DateListBox.ItemsSource = DateObjectList.GetDateList();
+            DateListBox.ItemsSource = DateTimeList.GetDateTimeList();
             
             this.DataContext = this;
 
             // Create a list of dataobejct for the next 30 days
+            // TODO: should be in another place
             for (int i = 0; i < 30; ++i)
             {
-                DateTime date = new DateTime();
-                _dataList.Add(new DataObject(date.AddDays(i), 2 + 0.2 * i));
+                DateTime date = (new DateTime()).AddDays(i);
+                DataObject dataobject;
+                //_dataList.Add(new DataObject(date.AddDays(i), 1));
+                DateTimeList datelist = DateTimeList.GetDateTimeList();
+                //if(datelist.Contains(date)) dataobject = new DataObject(date, )
             }
         }
 
         private void DatePickerValueChanged(object sender, DateTimeValueChangedEventArgs e)
         {
             DateTime date = (DateTime)e.NewDateTime;
-            DateObjectList.GetDateList().AddDateObject(new DateObject(date));
+            DateTimeList.GetDateTimeList().AddDateTime(date);
 
-            int avgDay = DateObjectList.AvgDiff();
+            int avgDay = DateTimeList.AvgDiff();
             if(avgDay > 0){
                 // TODO: Debug here!!!!
-                DateBlock.Text = (DateObjectList.GetDateList()[DateObjectList.GetDateList().Count].Date.AddDays(avgDay)).ToString();
+               DateBlock.Text = (DateTimeList.GetDateTimeList()[DateTimeList.GetDateTimeList().Count - 1].AddDays(avgDay)).ToString();
             }
             else
             {

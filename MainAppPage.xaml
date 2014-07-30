@@ -27,7 +27,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <Grid x:Name="PivotRoot" Background="Transparent">
             <controls:Pivot>
-                <controls:PivotItem Header="Conclusion">
+                <controls:PivotItem Header="Chart">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -37,8 +37,7 @@
                         <StackPanel Grid.Row="0" >
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Next Date is " />
-                                <!--Should be able to enter or change age-->
-                                <TextBlock x:Name="DateBlock"/>
+                                <TextBlock x:Name="DateBlock"/><!--IS THIS WHAT I WANT TO DO????-->
                             </StackPanel>
                         </StackPanel>
                         
@@ -71,8 +70,6 @@
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Id}" />
-                                        <TextBlock Text=":           " />
                                         <TextBlock Text="{Binding Year}" />
                                         <TextBlock Text="/" />
                                         <TextBlock Text="{Binding Month}" />
@@ -86,7 +83,7 @@
                     </Grid>
                 </controls:PivotItem>
                 
-                <!--Calendar-->
+                <!--Calendar TODO: IMPLEMENT THIS!!!-->
                 <controls:PivotItem Header="Calendar">
                     <wpControls:Calendar x:Name="Cal"/>
                 </controls:PivotItem>

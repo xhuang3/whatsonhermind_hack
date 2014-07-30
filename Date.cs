@@ -3,69 +3,50 @@ using System.Collections.ObjectModel;
 
 namespace WhatsOnHerMind
 {
-    public class DateObject
+    public class DateTimeList : ObservableCollection<DateTime>
     {
-        // TODO: Do we need ID here?
-        private static int _id = 0;
-        public int Id { get { return ++_id; } }
-        public DateTime Date { get; set; }
+        private static DateTimeList DateTimeListInstance;
 
-        public int Day { get; set; }
-        public int Month { get; set; }
-        public int Year { get; set; }
-        public DateObject(DateTime date)
+        public static DateTimeList GetDateTimeList()
         {
-            this.Date = date;
-            Day = date.Day;
-            Month = date.Month;
-            Year = date.Year;
-        }
-    }
-    public class DateObjectList : ObservableCollection<DateObject>
-    {
-        private static DateObjectList DateListInstance;
-
-        public static DateObjectList GetDateList()
-        {
-            if (DateListInstance == null)
+            if (DateTimeListInstance == null)
             {
-                DateListInstance = new DateObjectList();
+                DateTimeListInstance = new DateTimeList();
             }
-            return DateListInstance;
+            return DateTimeListInstance;
         }
 
-        public void AddDateObject(DateObject dateObject)
+        public void AddDateTime(DateTime datetime)
         {
-            //TODO: Sort DataObject by DateTime here!!!!
-            if (DateListInstance == null || DateListInstance.Count == 0)
+            if (DateTimeListInstance == null || DateTimeListInstance.Count == 0)
             {
-                DateListInstance.Add(dateObject);
+                DateTimeListInstance.Add(datetime);
             }
             else
             {
-                int temp = 0;
-                while (dateObject.Date > DateListInstance[temp].Date)
+                int i = 0;
+                while (datetime > DateTimeListInstance[i])
                 {
-                    temp++;
+                    i++;
                 }
-                DateListInstance.Insert(temp, dateObject);
+                DateTimeListInstance.Insert(i, datetime);
             }
         }
 
         public static int AvgDiff()
         {
             // TODO: Need to sort DateList
-            if (DateListInstance.Count < 2)
+            if (DateTimeListInstance.Count < 2)
             {
                 return -1;
             }
             int avg = -1;
-            DateObject tempData = DateListInstance[0];
-            for (int i = 1; i < DateListInstance.Count; ++i)
+            DateTime tempData = DateTimeListInstance[0];
+            for (int i = 1; i < DateTimeListInstance.Count; ++i)
             {
-                avg += DateListInstance[i].Date.DayOfYear - tempData.Date.DayOfYear;
+                avg += DateTimeListInstance[i].DayOfYear - tempData.DayOfYear;
             }
-            return avg / (DateListInstance.Count - 1);
+            return avg / (DateTimeListInstance.Count - 1);
         }
     }
 }
