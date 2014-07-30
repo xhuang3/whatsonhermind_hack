@@ -16,9 +16,7 @@ namespace WhatsOnHerMind
             DateListBox.ItemsSource = DateTimeList.GetDateTimeList();
             
             this.DataContext = this;
-            DataObjectList.PopulateList(DateTime.Now);
             DataList = DataObjectList.GetDataObjectList();
-
         }
 
         private void DatePickerValueChanged(object sender, DateTimeValueChangedEventArgs e)
@@ -27,10 +25,11 @@ namespace WhatsOnHerMind
             DateTimeList.GetDateTimeList().AddDateTime(date);
 
             int avgDay = DateTimeList.AvgDiff();
-            if(avgDay > 0){
+            if(avgDay > 0 && DateTimeList.GetDateTimeList().Count > 2){
                 // TODO: Debug here!!!!
                DateBlock.Text = (DateTimeList.GetDateTimeList()[DateTimeList.GetDateTimeList().Count - 1].AddDays(avgDay)).ToString();
                DataObjectList.PopulateList(DateTime.Now);
+               NavigationService.Navigate(new Uri("/MainAppPage.xaml?Refresh=true", UriKind.Relative));
             }
             else
             {

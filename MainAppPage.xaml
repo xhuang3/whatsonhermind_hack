@@ -49,7 +49,7 @@
                             
                             
                             <amq:SerialChart.Graphs>
-                                <amq:LineGraph ValueMemberPath="Data" Title="Mood:" Brush="White" />
+                                <amq:LineGraph x:Name="lineGraph1" ValueMemberPath="Data" Title="Mood:" Brush="White" />
                             </amq:SerialChart.Graphs>
                             
                         </amq:SerialChart>
