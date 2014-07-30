@@ -20,7 +20,6 @@ c:\users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMi
 C:\Users\xinhu\Documents\Visual Studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\MainAppPage.g.cs
 C:\Users\xinhu\Documents\Visual Studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\RegisterPage.g.cs
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\WhatsOnHerMind.csprojResolveAssemblyReference.cache
-C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\obj\Debug\DatePicker.g.cs
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\ar-SA\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\az-Latn-AZ\Microsoft.Phone.Controls.Toolkit.resources.dll

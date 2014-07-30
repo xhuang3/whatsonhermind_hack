@@ -1,18 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace WhatsOnHerMind
 {
-    public class DateList : List<DateTime>
+    public class DataObject
+    {
+        private static int _id = 0;
+        public int Id { get { return _id++; } }
+        public DateTime Date { get; set; }
+
+        public int Day { get; set; }
+        public int Month { get; set; }
+        public int Year { get; set; }
+
+        public DataObject(DateTime date)
+        {
+            this.Date = date;
+            Day = date.Day;
+            Month = date.Month;
+            Year = date.Year;
+        }
+
+    }
+    public class DateList : ObservableCollection<DataObject>
     {
         private static DateList DateListInstance;
-        public DateList()
-        {
-            this.Add(new DateTime());
-        }
 
         public static DateList GetDateList()
         {
@@ -21,6 +33,15 @@ namespace WhatsOnHerMind
                 DateListInstance = new DateList();
             }
             return DateListInstance;
+        }
+
+        public int AvgDiff()
+        {
+            foreach (DataObject data in DateListInstance)
+            {
+
+            }
+            return 0;
         }
     }
 }

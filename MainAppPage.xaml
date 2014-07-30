@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:amq="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
+    xmlns:tk="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -58,6 +59,7 @@
                         </amq:SerialChart>
                     </Grid>
                 </controls:PivotItem>
+                
                 <controls:PivotItem Header="Date">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -69,9 +71,21 @@
                         <TextBlock TextWrapping="Wrap" Text="this is the description" Grid.Row="0" />
                         <!--Display Dates-->
                         <ListBox Height="500" x:Name="DateListBox" Grid.Row="1">
-                            <!--Auto Update-->
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Id}" />
+                                        <TextBlock Text=": " />
+                                        <TextBlock Text="{Binding Year}" />
+                                        <TextBlock Text="/" />
+                                        <TextBlock Text="{Binding Month}" />
+                                        <TextBlock Text="/" />
+                                        <TextBlock Text="{Binding Day}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
                         </ListBox>
-                        <Button Content="Enter New Date" Grid.Row="2" Click="EnterNewDateClick" />
+                        <tk:DatePicker x:Name="AppDatePicker" Grid.Row="2"  ValueChanged="DatePickerValueChanged" />
                     </Grid>
                 </controls:PivotItem>
                 <controls:PivotItem Header="Fight">

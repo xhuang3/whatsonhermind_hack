@@ -94,9 +94,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Date.cs" />
-    <Compile Include="DatePicker.xaml.cs">
-      <DependentUpon>DatePicker.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MakeConclusion.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="LandingPage.xaml.cs">
@@ -121,10 +118,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="DatePicker.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="LandingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
