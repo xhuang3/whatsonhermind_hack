@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:amq="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
     xmlns:tk="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:wpControls="clr-namespace:WPControls;assembly=WPControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -41,16 +42,17 @@
                             </StackPanel>
                         </StackPanel>
                         
-                        <amq:SerialChart x:Name="chart1" DataSource="{Binding Data}" CategoryValueMemberPath="cat1"
+                        <amq:SerialChart x:Name="chart1" DataSource="{Binding DataList}" CategoryValueMemberPath="DateString"
                          AxisForeground="White"
                          PlotAreaBackground="Black"
-                             MinimumCategoryGridStep="200"
+                         MinimumCategoryGridStep="200"
                          GridStroke="DarkGray" Grid.Row="1">
+                            
+                            
                             <amq:SerialChart.Graphs>
-                                <amq:LineGraph ValueMemberPath="val1" Title="Line #1" Brush="Blue" />
-                                <amq:ColumnGraph ValueMemberPath="val2" Title="Column #2" Brush="#8000FF00" ColumnWidthAllocation="0.4" />
-                                <amq:AreaGraph ValueMemberPath="val3" Title="Area #1" Brush="#80FF0000" />
+                                <amq:LineGraph ValueMemberPath="Data" Title="Mood in the next 10 days" Brush="White" />
                             </amq:SerialChart.Graphs>
+                            
                         </amq:SerialChart>
                     </Grid>
                 </controls:PivotItem>
@@ -70,7 +72,7 @@
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="{Binding Id}" />
-                                        <TextBlock Text=": " />
+                                        <TextBlock Text=":           " />
                                         <TextBlock Text="{Binding Year}" />
                                         <TextBlock Text="/" />
                                         <TextBlock Text="{Binding Month}" />
@@ -82,6 +84,11 @@
                         </ListBox>
                         <tk:DatePicker x:Name="AppDatePicker" Grid.Row="2"  ValueChanged="DatePickerValueChanged" />
                     </Grid>
+                </controls:PivotItem>
+                
+                <!--Calendar-->
+                <controls:PivotItem Header="Calendar">
+                    <wpControls:Calendar x:Name="Cal"/>
                 </controls:PivotItem>
             </controls:Pivot>
         </Grid>

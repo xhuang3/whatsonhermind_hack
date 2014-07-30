@@ -3,36 +3,53 @@ using System.Collections.ObjectModel;
 
 namespace WhatsOnHerMind
 {
-    public class DataObject
+    public class DateObject
     {
+        // TODO: Do we need ID here?
         private static int _id = 0;
-        public int Id { get { return _id++; } }
+        public int Id { get { return ++_id; } }
         public DateTime Date { get; set; }
 
         public int Day { get; set; }
         public int Month { get; set; }
         public int Year { get; set; }
-
-        public DataObject(DateTime date)
+        public DateObject(DateTime date)
         {
             this.Date = date;
             Day = date.Day;
             Month = date.Month;
             Year = date.Year;
         }
-
     }
-    public class DateList : ObservableCollection<DataObject>
+    public class DateObjectList : ObservableCollection<DateObject>
     {
-        private static DateList DateListInstance;
+        private static DateObjectList DateListInstance;
 
-        public static DateList GetDateList()
+        public static DateObjectList GetDateList()
         {
             if (DateListInstance == null)
             {
-                DateListInstance = new DateList();
+                DateListInstance = new DateObjectList();
             }
             return DateListInstance;
+        }
+
+        public void AddDateObject(DateObject dateObject)
+        {
+            //TODO: Sort DataObject by DateTime here!!!!
+            if (DateListInstance == null || DateListInstance.Count == 0)
+            {
+                DateListInstance.Add(dateObject);
+            }
+            else
+            {
+                int temp = 0;
+                while (dateObject.Date > DateListInstance[temp].Date)
+                {
+                    temp++;
+                }
+                DateListInstance.Insert(temp, dateObject);
+            }
         }
 
         public static int AvgDiff()
@@ -43,7 +60,7 @@ namespace WhatsOnHerMind
                 return -1;
             }
             int avg = -1;
-            DataObject tempData = DateListInstance[0];
+            DateObject tempData = DateListInstance[0];
             for (int i = 1; i < DateListInstance.Count; ++i)
             {
                 avg += DateListInstance[i].Date.DayOfYear - tempData.Date.DayOfYear;

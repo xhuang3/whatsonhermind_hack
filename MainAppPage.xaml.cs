@@ -1,64 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
+﻿using Microsoft.Phone.Controls;
+using System;
 using System.Collections.ObjectModel;
 
 namespace WhatsOnHerMind
 {
-    public class TestDataItem{
-        public string cat1 { get; set; }
-        public double val1 { get; set; }
-        public double val2 { get; set; }
-        public decimal val3 { get; set; }
-    }
+    // TODO: We can move DataObject to another .cs file
+    public class DataObject
+    {
+        public string DateString { get; set; }
+        public DateTime Date { get; set; }
 
+        public double Data { get; set; }
+
+        public DataObject(DateTime date, double data)
+        {
+            Date = date;
+            Data = data;
+            DateString = date.ToString(); //TODO: Better format
+        }
+    }
 
     public partial class MainAppPage : PhoneApplicationPage
     {
-        private ObservableCollection<TestDataItem> _data = new ObservableCollection<TestDataItem>()
-        {
-            new TestDataItem() { cat1 = "cat1", val1=5, val2=15, val3=12},
-            new TestDataItem() { cat1 = "cat2", val1=15.2, val2=1.5, val3=2.1M},
-            new TestDataItem() { cat1 = "cat3", val1=25, val2=5, val3=2},
-            new TestDataItem() { cat1 = "cat4", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat5", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat6", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat7", val1=4.1, val2=4, val3=2},
-            new TestDataItem() { cat1 = "cat8", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat9", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat10", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat11", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat12", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat13", val1=4.1, val2=4, val3=2},
-            new TestDataItem() { cat1 = "cat14", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat15", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat16", val1=8.1, val2=1, val3=22},
-            new TestDataItem() { cat1 = "cat17", val1=8.1, val2=1, val3=22},
-        };
+        private ObservableCollection<DataObject> _dataList = new ObservableCollection<DataObject>();
 
-        public ObservableCollection<TestDataItem> Data { get { return _data; } }
+        public ObservableCollection<DataObject> DataList { get { return _dataList; } }
+
         public MainAppPage()
         {
             InitializeComponent();
-            DateListBox.ItemsSource = DateList.GetDateList();
+            DateListBox.ItemsSource = DateObjectList.GetDateList();
             
             this.DataContext = this;
+
+            // Create a list of dataobejct for the next 30 days
+            for (int i = 0; i < 30; ++i)
+            {
+                DateTime date = new DateTime();
+                _dataList.Add(new DataObject(date.AddDays(i), 2 + 0.2 * i));
+            }
         }
 
         private void DatePickerValueChanged(object sender, DateTimeValueChangedEventArgs e)
         {
             DateTime date = (DateTime)e.NewDateTime;
-            DateList.GetDateList().Add(new DataObject(date));
+            DateObjectList.GetDateList().AddDateObject(new DateObject(date));
 
-            int avgDay = DateList.AvgDiff();
+            int avgDay = DateObjectList.AvgDiff();
             if(avgDay > 0){
-                DateBlock.Text = (date.AddDays(avgDay)).ToString();
+                // TODO: Debug here!!!!
+                DateBlock.Text = (DateObjectList.GetDateList()[DateObjectList.GetDateList().Count].Date.AddDays(avgDay)).ToString();
             }
             else
             {

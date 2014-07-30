@@ -3,5 +3,6 @@
     <AssemblyPart x:Name="WhatsOnHerMind" Source="WhatsOnHerMind.dll" />
     <AssemblyPart x:Name="AmCharts.Windows.QuickCharts.WP" Source="AmCharts.Windows.QuickCharts.WP.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="WPControls" Source="WPControls.dll" />
   </Deployment.Parts>
 </Deployment>

@@ -72,3 +72,4 @@ C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMi
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\AmCharts.Windows.QuickCharts.WP.dll
+C:\Users\xinhu\documents\visual studio 2013\Projects\WhatsOnHerMind\WhatsOnHerMind\Bin\Debug\WPControls.dll
