@@ -49,7 +49,7 @@
                             
                             
                             <amq:SerialChart.Graphs>
-                                <amq:LineGraph ValueMemberPath="Data" Title="Mood in the next 10 days" Brush="White" />
+                                <amq:LineGraph ValueMemberPath="Data" Title="Mood:" Brush="White" />
                             </amq:SerialChart.Graphs>
                             
                         </amq:SerialChart>

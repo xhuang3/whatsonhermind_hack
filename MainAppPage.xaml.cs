@@ -16,7 +16,7 @@ namespace WhatsOnHerMind
             DateListBox.ItemsSource = DateTimeList.GetDateTimeList();
             
             this.DataContext = this;
-            DataObjectList.PopulateListWithoutValue(new DateTime());
+            DataObjectList.PopulateList(DateTime.Now);
             DataList = DataObjectList.GetDataObjectList();
 
         }
@@ -30,6 +30,7 @@ namespace WhatsOnHerMind
             if(avgDay > 0){
                 // TODO: Debug here!!!!
                DateBlock.Text = (DateTimeList.GetDateTimeList()[DateTimeList.GetDateTimeList().Count - 1].AddDays(avgDay)).ToString();
+               DataObjectList.PopulateList(DateTime.Now);
             }
             else
             {

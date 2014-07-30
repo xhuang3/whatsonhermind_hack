@@ -18,7 +18,7 @@ namespace WhatsOnHerMind
         {
             Date = date;
             Data = data;
-            DateString = date.ToString(); //TODO: Better format
+            DateString = date.Year + "/" + date.Month + "/" + date.Day; //TODO: Better format
         }
 
 
@@ -27,8 +27,15 @@ namespace WhatsOnHerMind
     public class DataObjectList : ObservableCollection<DataObject>
     {
         private static DataObjectList _DataObjectList;
-        public static void PopulateListWithoutValue(DateTime date)
+        private static bool CompareDateTime(DateTime date1, DateTime date2)
         {
+            if (date1.Year == date2.Year && date1.Month == date2.Month && date1.Day == date2.Day) return true;
+            return false;
+        }
+        public static void PopulateList(DateTime date)
+        {
+            DateTime angryDate = new DateTime();
+            if(DateTimeList.GetDateTimeList().Count > 2) angryDate = DateTimeList.GetDateTimeList()[DateTimeList.GetDateTimeList().Count - 1].AddDays(14);
             if (_DataObjectList == null)
             {
                 _DataObjectList = new DataObjectList();
@@ -36,7 +43,17 @@ namespace WhatsOnHerMind
             _DataObjectList.Clear();
             for (int i = 0; i < 30; ++i)
             {
-                DataObject dataObject = new DataObject(date.AddDays(i), 0);
+                DateTime tempDate = date.AddDays(i);
+                DataObject dataObject;
+                if(CompareDateTime(tempDate, angryDate))
+                {
+                    dataObject = new DataObject(tempDate, 5);
+                }
+                else
+                {
+                    dataObject = new DataObject(tempDate, 1);
+                }
+                
                 _DataObjectList.Add(dataObject);
             }
         }
