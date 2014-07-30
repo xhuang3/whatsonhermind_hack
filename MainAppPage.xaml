@@ -45,7 +45,17 @@
                             </StackPanel>
                         </StackPanel>
                         
-                        <amq:LineGraph />
+                        <amq:SerialChart x:Name="chart1" DataSource="{Binding Data}" CategoryValueMemberPath="cat1"
+                         AxisForeground="White"
+                         PlotAreaBackground="Black"
+                             MinimumCategoryGridStep="200"
+                         GridStroke="DarkGray" Grid.Row="1">
+                            <amq:SerialChart.Graphs>
+                                <amq:LineGraph ValueMemberPath="val1" Title="Line #1" Brush="Blue" />
+                                <amq:ColumnGraph ValueMemberPath="val2" Title="Column #2" Brush="#8000FF00" ColumnWidthAllocation="0.4" />
+                                <amq:AreaGraph ValueMemberPath="val3" Title="Area #1" Brush="#80FF0000" />
+                            </amq:SerialChart.Graphs>
+                        </amq:SerialChart>
                     </Grid>
                 </controls:PivotItem>
                 <controls:PivotItem Header="Date">
