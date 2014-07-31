@@ -32,6 +32,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         
                         <StackPanel Grid.Row="0" >
@@ -53,6 +54,12 @@
                             </amq:SerialChart.Graphs>
                             
                         </amq:SerialChart>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2">
+                            <Button Content="Refresh" Click="RefreshButtonPressed" />
+                            <Button Content="Add Reminder" Click="AddReminderButtonPressed" />
+                        </StackPanel>
+                        
                     </Grid>
                 </controls:PivotItem>
                 
