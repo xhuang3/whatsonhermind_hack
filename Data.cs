@@ -31,7 +31,6 @@ namespace WhatsOnHerMind
             return false;
         }
 
-
         public void PopulateList(DateTime date)
         {
             _DataObjectList.Clear();
@@ -44,7 +43,7 @@ namespace WhatsOnHerMind
                 aDate = pDate.AddDays(14);
                 pDate = pDate.AddDays(DateTimeList.AvgDiff());
             }
-            int angryI = -1;
+            int aI = -1;
             int pI = -1;
 
             for (int i = 0; i < 30; ++i)
@@ -52,7 +51,7 @@ namespace WhatsOnHerMind
                 DateTime tempDate = date.AddDays(i);
                 if(CompareDateTime(tempDate, aDate))
                 {
-                    angryI = i;
+                    aI = i;
                 }
                 if(CompareDateTime(tempDate, pDate))
                 {
@@ -62,12 +61,12 @@ namespace WhatsOnHerMind
                 _DataObjectList.Add(dataObject);
             }
             
-            if (angryI < pI && angryI > 0)
+            if (aI < pI && aI > 0)
             {
                 for(int i = 0; i < 30; ++i)
                 {
-                    if (i < angryI) _DataObjectList[i].Data += i * 0.05;
-                    else if (angryI <= i && i < pI) _DataObjectList[i].Data = 3 + i * 0.1;
+                    if (i < aI) _DataObjectList[i].Data += i * 0.05;
+                    else if (aI <= i && i < pI) _DataObjectList[i].Data = 3 + i * 0.1;
                     else if (i >= pI && i < pI + 7) _DataObjectList[i].Data -= i * 0.01;
                     else _DataObjectList[i].Data = 1;
                 }
